@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hybrid Sort Comparison | Mandra Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-frame">
+        <header>
+            <h1>PERBANDINGAN <span>HYBRID SORT</span></h1>
+            <p>Benchmarking: Iterative (Insertion) vs Recursive (Merge) vs Hybrid</p>
+        </header>
+
+        <div class="input-card">
+            <input type="number" id="nVal" value="10000" placeholder="Max N">
+            <input type="number" id="kVal" value="64" placeholder="Threshold K">
+            <button onclick="startBenchmark()">Run Benchmarks</button>
+        </div>
+
+        <div class="table-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>N</th>
+                        <th>Iterative (ms)</th>
+                        <th>Recursive (ms)</th>
+                        <th>Hybrid (ms)</th>
+                    </tr>
+                </thead>
+                <tbody id="resTable"></tbody>
+            </table>
+        </div>
+
+        <div class="log-wrapper">
+            <h3>Process Logs</h3>
+            <div id="logConsole" class="log-console">
+                <p>> Menunggu perintah, Mandra...</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
